@@ -2,25 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: todo
-    version: v2
-  name: quarkus-jvm
+    app: quarkusjvm-todo
+    version: v1
+  name: quarkus-jvm-todo-dc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: todo
-      version: v2
+      app: quarkusjvm-todo
+      version: v1
   strategy: {}
   template:
     metadata:
       labels:
-        app: todo
-        version: v2
+        app: quarkusjvm-todo
+        version: v1
     spec:
       containers:
-      - image: quay.io/naveenkendyala/quarkus-demo-quarkusjvm:v1
-        name: quarkus-jvm
+      - image: quay.io/naveenkendyala/quarkus-demo-quarkusjvm-todo:v1
+        name: quarkusjvm-todo
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
@@ -34,9 +34,9 @@ spec:
           protocol: TCP
         envFrom:
         - configMapRef:
-            name: istio-demo-recommendation-v2-cm
+            name: quarkus-demo-quarkusjvm-todo-cm
         - secretRef:
-            name: istio-demo-recommendation-v2-secret
+            name: quarkus-demo-quarkusjvm-todo-secret
         resources:
           requests:
             memory: "128Mi"

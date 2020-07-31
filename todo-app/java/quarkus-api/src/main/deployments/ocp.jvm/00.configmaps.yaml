@@ -4,4 +4,4 @@ data:
   DB_URL: jdbc:mysql://mysql-db-service:3306/db_quarkus_jvm
 kind: ConfigMap
 metadata:
-  name: quarkus-demo-todo-v2-cm
+  name: quarkus-demo-quarkusjvm-todo-cm
