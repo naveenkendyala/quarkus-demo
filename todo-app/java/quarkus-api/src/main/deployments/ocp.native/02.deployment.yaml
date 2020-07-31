@@ -2,28 +2,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: recommendation
-    version: v3
-  name: recommendation-v3
+    app: quarkusnative-todo
+    version: v1
+  name: quarkus-native-todo-dc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: recommendation
-      version: v3
+      app: quarkusnative-todo
+      version: v1
   strategy: {}
   template:
     metadata:
       labels:
-        app: recommendation
-        version: v3
-      annotations:
-        sidecar.istio.io/inject: "true"
+        app: quarkusnative-todo
+        version: v1
     spec:
       containers:
-      - image: quay.io/naveenkendyala/istio-demo-recommendation:v3
-        name: recommendation
-        imagePullPolicy: Always
+      - image: quay.io/naveenkendyala/quarkus-demo-quarkusnative-todo:v1
+        name: quarkusnative-todo
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
           name: http
@@ -36,9 +34,9 @@ spec:
           protocol: TCP
         envFrom:
         - configMapRef:
-            name: istio-demo-recommendation-v3-cm
+            name: quarkus-demo-quarkusnative-todo-cm
         - secretRef:
-            name: istio-demo-recommendation-v3-secret
+            name: quarkus-demo-quarkusnative-todo-secret
         resources:
           requests:
             memory: "175Mi"

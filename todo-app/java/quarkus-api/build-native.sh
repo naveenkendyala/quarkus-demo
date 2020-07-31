@@ -2,12 +2,12 @@
 ./mvnw clean package -Pnative -Dquarkus.profile=native -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=docker
 
 echo "*****************************************************************************"
-docker rmi istio-demo/recommendation:v3
-docker rmi quay.io/naveenkendyala/istio-demo-recommendation:v3
-docker build -f src/main/build/docker/Dockerfile.native -t istio-demo/recommendation:v3 .; 
+docker rmi quarkus-demo/quarkusnative-todo:v1
+docker rmi quay.io/naveenkendyala/quarkus-demo-quarkusnative-todo:v1
+docker build -f src/main/build/docker/Dockerfile.native -t quarkus-demo-quarkusnative-todo:v1 .; 
 
 echo "*****************************************************************************"
-docker tag istio-demo/recommendation:v3 quay.io/naveenkendyala/istio-demo-recommendation:v3; 
+docker tag quarkus-demo-quarkusnative-todo:v1 quay.io/naveenkendyala/quarkus-demo-quarkusnative-todo:v1; 
 
 echo "*****************************************************************************"
-docker push quay.io/naveenkendyala/istio-demo-recommendation:v3
+docker push quay.io/naveenkendyala/quarkus-demo-quarkusnative-todo:v1
