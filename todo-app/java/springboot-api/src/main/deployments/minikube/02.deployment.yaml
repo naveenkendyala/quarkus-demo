@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: springboot-jpa-api-jvm
+  name: springboot-jpa-api-jvm-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: springboot-jpa-api-jvm
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        name: springboot-jpa-api-jvm
+    spec:
+      containers:
+      - image: naveenkendyala/springboot-jpa-api-jvm:0.0.50
+        name: springboot-jpa-api-jvm
+        envFrom:
+        - configMapRef:
+            name: springboot-jpa-api-jvm-cm
+        - secretRef:
+            name: springboot-jpa-api-jvm-secret
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "175Mi"
+          limits:
+            cpu: "300m"
+            memory: "350Mi"
+        livenessProbe:
+          httpGet:
+              port: 8080
+              path: /applive
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 2          
+        readinessProbe:
+          httpGet:
+            path: /appready
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30
+status: {}
+

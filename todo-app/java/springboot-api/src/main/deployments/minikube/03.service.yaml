@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    name: springboot-jpa-api-jvm
+  name: springboot-jpa-api-jvm-svc
+spec:
+  ports:
+  - port: 8080
+    nodePort: 30201
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: springboot-jpa-api-jvm
+  type: NodePort
+status:
+  loadBalancer: {}
+
