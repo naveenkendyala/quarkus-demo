@@ -2,15 +2,12 @@
 mvn clean package
 
 echo "*****************************************************************************"
-docker build -f src/main/build/docker/jvm.dockerfile -t springboot/springboot-jpa-api-jvm:$1 .; 
-
-
-echo "*****************************************************************************"
-docker tag springboot/springboot-jpa-api-jvm:$1 naveenkendyala/springboot-jpa-api-jvm:$1; 
-docker tag springboot/springboot-jpa-api-jvm:$1 quay.io/naveenkendyala/springboot-jpa-api-jvm:$1; 
-
+docker rmi quarkus-demo/springboot-todo:v1
+docker rmi quay.io/naveenkendyala/quarkus-demo-springboot-todo:v1;
+docker build -f src/main/build/docker/Dockerfile.jvm -t quarkus-demo/springboot-todo:v1 .; 
 
 echo "*****************************************************************************"
-docker push quay.io/naveenkendyala/springboot-jpa-api-jvm:$1; 
-#docker push naveenkendyala/springboot-jpa-api-jvm:$1
+docker tag quarkus-demo/springboot-todo:v1 quay.io/naveenkendyala/quarkus-demo-springboot-todo:v1;
 
+echo "*****************************************************************************"
+docker push quay.io/naveenkendyala/quarkus-demo-springboot-todo:v1;
