@@ -4,4 +4,4 @@ data:
   DB_URL: jdbc:mysql://mysql-db-service:3306/db_springboot
 kind: ConfigMap
 metadata:
-  name: springboot-jpa-api-jvm-cm
+  name: quarkus-demo-springboot-todo-cm

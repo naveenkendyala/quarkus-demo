@@ -2,27 +2,30 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    name: springboot-jpa-api-jvm
-  name: springboot-jpa-api-jvm-deploy
+    name: springboot-todo
+    version: v1
+  name: springboot-todo-dc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: springboot-jpa-api-jvm
+      app: springboot-todo
+      version: v1
   strategy: {}
   template:
     metadata:
       labels:
-        name: springboot-jpa-api-jvm
+        app: springboot-todo
+        version: v1
     spec:
       containers:
-      - image: naveenkendyala/springboot-jpa-api-jvm:0.0.50
-        name: springboot-jpa-api-jvm
+      - image: quay.io/naveenkendyala/quarkus-demo-springboot-todo:v1
+        name: springboot-todo
         envFrom:
         - configMapRef:
-            name: springboot-jpa-api-jvm-cm
+            name: quarkus-demo-springboot-todo-cm
         - secretRef:
-            name: springboot-jpa-api-jvm-secret
+            name: quarkus-demo-springboot-todo-secret
         ports:
         - containerPort: 8080
         resources:
