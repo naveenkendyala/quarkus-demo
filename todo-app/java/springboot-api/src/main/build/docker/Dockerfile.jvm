@@ -1,0 +1,5 @@
+FROM 		openjdk:11.0.8-jdk-slim
+WORKDIR 	/app/
+COPY 		target/springboot-todo-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 		8080
+ENTRYPOINT 	["java","-Xmx32M", "-Xms32m","-jar","app.jar"]

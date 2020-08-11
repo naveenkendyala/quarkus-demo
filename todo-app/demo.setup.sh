@@ -4,6 +4,7 @@ oc apply -f database/mysql
 
 # Log into the terminal of the mysql pod
 # Execute the command to become root and enter the password
+# The password is "demo"
 mysql -u root
 
 # Run the database script present in the "database/mydql/database.script.sql"

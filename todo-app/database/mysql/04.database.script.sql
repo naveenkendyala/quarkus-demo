@@ -14,7 +14,7 @@ CREATE TABLE `ToDo` (
   `TASK_NAME` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB;
-INSERT INTO db_quarkus_jvm.ToDo values ("1","Yes","Task in Quarkus JVM DB");
+INSERT INTO db_quarkus_jvm.ToDo values ("1","Yes","Quarkus JVM DB Task");
 
 #CREATE THE DATABASE & TABLES
 CREATE DATABASE `db_quarkus_native`;
@@ -25,7 +25,7 @@ CREATE TABLE `ToDo` (
   `TASK_NAME` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB;
-INSERT INTO db_quarkus_native.ToDo values ("1","Yes","Task in Quarkus Native DB");
+INSERT INTO db_quarkus_native.ToDo values ("1","Yes","Quarkus Native DB Task");
 
 #CREATE THE DATABASE & TABLES
 CREATE DATABASE `db_springboot`;
@@ -36,7 +36,7 @@ CREATE TABLE `ToDo` (
   `TASK_NAME` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB;
-INSERT INTO db_springboot.ToDo values ("1","Yes","Task in Spring DB");
+INSERT INTO db_springboot.ToDo values ("1","Yes","Spring DB Task");
 
 
 #CREATE THE DATABASE & TABLES
@@ -48,7 +48,7 @@ CREATE TABLE `ToDo` (
   `TASK_NAME` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB;
-INSERT INTO db_eap.ToDo values ("1","Yes","Task in EAP DB");
+INSERT INTO db_eap.ToDo values ("1","Yes","EAP DB Task");
 
 
 

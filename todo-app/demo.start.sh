@@ -1,5 +1,5 @@
-#Start the Spring Boot
-#TODO
+#Start the Springboot
+oc apply -f java/springboot-api/src/main/deployments/ocp
 
 #Start the Quarkus JVM
 oc apply -f java/quarkus-api/src/main/deployments/ocp.jvm
