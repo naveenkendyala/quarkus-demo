@@ -4,7 +4,8 @@ metadata:
   labels:
     name: springboot-todo
     version: v1
-  name: springboot-todo-dc
+    app.openshift.io/runtime: spring-boot
+  name: springboot
 spec:
   replicas: 1
   selector:

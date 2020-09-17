@@ -5,6 +5,7 @@ items:
   metadata:
     labels:
       template: mysql-ephemeral-template
+      app.openshift.io/runtime: mysql-database
     name: mysql-db-dc
   spec:
     replicas: 1

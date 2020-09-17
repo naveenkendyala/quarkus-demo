@@ -4,7 +4,8 @@ metadata:
   labels:
     app: quarkusjvm-todo
     version: v1
-  name: quarkus-jvm-todo-dc
+    app.openshift.io/runtime: quarkus
+  name: quarkus-jvm
 spec:
   replicas: 1
   selector:
