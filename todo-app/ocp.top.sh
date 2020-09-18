@@ -12,7 +12,7 @@ do
  echo Metrics Refresh Every $1 seconds............
  echo ""
  echo "#####################################################"
- echo "POD NAME		 	       CPU   MEMORY     "
+ echo "POD NAME		 	  CPU   MEMORY     "
  echo "#####################################################"
  oc adm top po --no-headers | sort --reverse --key 3 --numeric | head -100
 
