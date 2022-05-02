@@ -1,6 +1,6 @@
 #/bin/bash
 #Quarkus Version
-VERSION=2.2
+VERSION=v2.2
 
 ./mvnw clean package -Pnative -Dquarkus.profile=native -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=docker
 
