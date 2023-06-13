@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: quarkusnative-todo
-    version: v2.2
+    version: v2.13.7
     app.openshift.io/runtime: quarkus
   name: quarkus-native
 spec:
@@ -11,16 +11,16 @@ spec:
   selector:
     matchLabels:
       app: quarkusnative-todo
-      version: v2.2
+      version: v2.13.7
   strategy: {}
   template:
     metadata:
       labels:
         app: quarkusnative-todo
-        version: v2.2
+        version: v2.13.7
     spec:
       containers:
-      - image: quay.io/naveenkendyala/quarkus-demo-quarkusnative-todo:v2.2
+      - image: quay.io/naveenkendyala/quarkus-demo-quarkusnative-todo:v2.13.7
         name: quarkusnative-todo
         imagePullPolicy: IfNotPresent
         ports:
