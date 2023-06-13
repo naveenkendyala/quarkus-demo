@@ -1,5 +1,5 @@
 # recommendation project
-2.13.7 
+2.13.7 . New
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
