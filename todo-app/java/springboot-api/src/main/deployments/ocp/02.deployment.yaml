@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     name: springboot-todo
-    version: v1
+    version: v3.1.0
     app.openshift.io/runtime: spring-boot
   name: springboot
 spec:
@@ -11,16 +11,16 @@ spec:
   selector:
     matchLabels:
       app: springboot-todo
-      version: v1
+      version: v3.1.0
   strategy: {}
   template:
     metadata:
       labels:
         app: springboot-todo
-        version: v1
+        version: v3.1.0
     spec:
       containers:
-      - image: quay.io/naveenkendyala/quarkus-demo-springboot-todo:v1
+      - image: quay.io/naveenkendyala/quarkus-demo-springboot-todo:v3.1.0
         name: springboot-todo
         envFrom:
         - configMapRef:
