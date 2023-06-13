@@ -2,7 +2,7 @@
 #Quarkus Version
 VERSION=v2.13.7
 
-./mvnw clean package -Dquarkus-profile=jvm
+./mvnw clean package -Dquarkus.profile=jvm
 
 echo "*****************************************************************************"
 podman rmi quarkus-demo/quarkusjvm-todo:${VERSION}
