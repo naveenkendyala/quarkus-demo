@@ -40,7 +40,7 @@ spec:
             name: quarkus-demo-quarkusnative-todo-secret
         resources:
           requests:
-            memory: "175Mi"
+            memory: "96Mi"
             cpu: "500m"
           limits:
             memory: "350Mi"
